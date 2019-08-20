@@ -1,5 +1,6 @@
 Using MySQL, Express, and Node.js (MEAN) sample app
 Updated on August, 2019 by Nino Narido
+
 For this tutorial we'll be doing something a little different, instead of developing applications with PHP we'll be creating a login system with Node.js, Express, and MySQL.
 The Basic and Advanced packages include additional features and a download link to the source code.
 What you will learn in this Tutorial
