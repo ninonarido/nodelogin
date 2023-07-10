@@ -6,7 +6,7 @@ var path = require('path');
 
 var connection = mysql.createConnection({
 	host     : 'localhost',
-	user     : 'nino',
+	user     : 'root',
 	password : '',
 	database : 'nodelogin'
 });
@@ -33,7 +33,7 @@ app.post('/auth', function(request, response) {
 			if (results.length > 0) {
 				request.session.loggedin = true;
 				request.session.username = username;
-				response.redirect('/home');
+				response.redirect('http://localhost:8081');
 			} else {
 				response.send('Incorrect Username and/or Password!');
 			}
@@ -54,4 +54,4 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
-app.listen(3000);
+app.listen(8888);

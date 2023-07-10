@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+    <title>Research Paper</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <script type="text/javascript" src="/js/main.js"></script>
+
+</head>
+<body>
+<!--thirdy-->
+<!--Header-->
+<div th:replace="components/header :: header"></div>
+
+<!--TODO Ryan HAY NAKO RYAN - CARLOS -->
+<!--First Row-->
+<div class="container mt-5 ">
+    <div class="row bg_atlas_light rc-10 d-flex ">
+        <div class="container px-5 py-3">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text_color fw-bolder" style="font-size: 27px;"  th:text="${title}"> </h1>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <div class="row mb-2">
+                        <div class="col d-flex justify-content-start">
+                            <h1 class="text_color" style="font-size: 13px; margin-right: 5px;">Author : </h1>
+                            <span class="bg_atlas_primary rounded rc-10 me-2 d-flex" th:each="author : ${authors}">
+                                 <h1 class="text_color text-white" style="font-size: 10px; margin: 5px;" th:text="${author}"></h1>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <h1 class="text_color " style="font-size: 13px;">Uploaded by : </h1>
+                    <h1 class="text_color " style="font-size: 13px; margin-left:3px" th:text="${uploadedBy}"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <h1 class="text_color " style="font-size: 13px;">Language : </h1>
+                    <h1 class="text_color " style="font-size: 13px; margin-left:3px" th:text="${language}"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <h1 class="text_color " style="font-size: 13px;">Page count : </h1>
+                    <h1 class="text_color " style="font-size: 13px; margin-left:3px" th:text="${pageCount}"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <h1 class="text_color " style="font-size: 13px;">Publisher : </h1>
+                    <h1 class="text_color " style="font-size: 13px; margin-left:3px" th:text="${publisher}"></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-start">
+                    <h1 class="text_color " style="font-size: 13px;">Published Date : </h1>
+                    <h1 class="text_color " style="font-size: 13px; margin-left:3px" th:text="${publishedDate}"></h1>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col d-flex justify-content-start">
+                <h1 class="text_color " style="font-size: 13px;">Keyword : </h1>
+                <span class="d-flex justify-content-start" th:each="keyword : ${keywords}">
+                      <h1 class="text_color mx-2" style="font-size: 13px;" th:text="${keyword}"></h1>
+                            </span>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col d-flex justify-content-start">
+                    <h1 class="text_color " style="font-size: 13px;">Views : </h1>
+<!--                    <h1 class="text_color " style="font-size: 13px;" th:text="${view}"></h1>-->
+                    <h1 class="text_color " style="font-size: 13px; margin-left:10px">Download : </h1>
+<!--                    <h1 class="text_color " style="font-size: 13px; margin-left:3px" th:text="${download}"></h1>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Second Row-->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-7">
+            <div class="row">
+                <div class="col">
+                    <strong style="font-size: 27px;">Abstract</strong>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col" style="text-align: justify; text-indent: 5em; font-size: 18px;" th:text="${abstracts}">
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <strong style="font-size: 27px;">Comments</strong>
+                </div>
+            </div>
+            <!--  comments rows   -->
+            <div class="row">
+                <div class="col">
+                    <div class="row bg_atlas_light mt-3 p-3">
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color fw-bold" style="font-size: 14px; margin-right: 5px;">Marielle Zabala</h1>
+                                <span class="bg_atlas_secondary rounded rc-10 me-2 d-flex">
+                                 <h1 class="text_color" style="font-size: 8px; margin: 5px;">CCIS Student</h1>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">3 days ago.</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">Good Research study. Wow, grape!</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg_atlas_light mt-2 p-3">
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color fw-bold" style="font-size: 14px; margin-right: 5px;">Marielle Zabala</h1>
+                                <span class="bg_atlas_secondary rounded rc-10 me-2 d-flex">
+                                 <h1 class="text_color" style="font-size: 8px; margin: 5px;">CCIS Student</h1>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">3 days ago.</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">Good Research study. Wow, grape!</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg_atlas_light mt-2 p-3">
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color fw-bold" style="font-size: 14px; margin-right: 5px;">Marielle Zabala</h1>
+                                <span class="bg_atlas_secondary rounded rc-10 me-2 d-flex">
+                                 <h1 class="text_color" style="font-size: 8px; margin: 5px;">CCIS Student</h1>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">3 days ago.</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">Good Research study. Wow, grape!</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg_atlas_light mt-2 p-3">
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color fw-bold" style="font-size: 14px; margin-right: 5px;">Marielle Zabala</h1>
+                                <span class="bg_atlas_secondary rounded rc-10 me-2 d-flex">
+                                 <h1 class="text_color" style="font-size: 8px; margin: 5px;">CCIS Student</h1>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">3 days ago.</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">Good Research study. Wow, grape!</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row bg_atlas_light mt-2 p-3">
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color fw-bold" style="font-size: 14px; margin-right: 5px;">Marielle Zabala</h1>
+                                <span class="bg_atlas_secondary rounded rc-10 me-2 d-flex">
+                                 <h1 class="text_color" style="font-size: 8px; margin: 5px;">CCIS Student</h1>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">3 days ago.</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-start">
+                                <h1 class="text_color " style="font-size: 14px;">Good Research study. Wow, grape!</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 mb-5 ">
+                <div class="col">
+                    <strong style="font-size: 20px;">See More</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col" style="margin-top: 60px;">
+                    <a th:href="@{/{id}(id=${pdfSrc})}" class="btn bg_atlas_primary text_color_secondary w-100 rc-10 button_hover text-decoration-none" style="height:70px; display: flex; align-items: center; justify-content: center;">
+                        <img th:src="@{/images/view.png}" src="images/view.png" class="icon">
+                        <span style="margin-left: 10px; font-size: 30px; font-weight: bold;">View Full Paper</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="margin-top: 20px;">
+                    <a class="btn bg_atlas_primary text_color_secondary w-100 rc-10 button_hover text-decoration-none" style="height:70px; display: flex; align-items: center; justify-content: center;">
+                        <img th:src="@{/images/favorites.png}" src="images/favorites.png" class="icon">
+                        <span style="margin-left: 10px; font-size: 30px; font-weight: bold;">Add to Favorites</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col">
+                    <strong style="font-size: 20px; font-weight: bold;">Citation (APA)</strong>
+                </div>
+            </div>
+
+            <div class="row bg_atlas_light mt-2 p-3 rc-10">
+                <div class="row">
+                    <div class="col d-flex justify-content-start">
+                        <h1 class="text_color " style="font-size: 13px;" th:text="${citation}"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col">
+                    <strong style="font-size: 20px;">References:</strong>
+                </div>
+            </div>
+            <div class="row bg_atlas_light mt-2 p-3 rc-10">
+                <div class="row">
+                    <div class="col">
+                        <p th:text="${paper_references}"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div th:replace="components/footer :: footer"></div>
+</body>
+</html>
+
+

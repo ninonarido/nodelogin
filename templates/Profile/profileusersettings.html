@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+    <title>Bootstrap 5 Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <script type="text/javascript" src="/js/main.js"></script>
+
+    <style>
+        .accountinformation {
+          width: 365px;
+          position: absolute;
+          top: 220px;
+          left: 255px;
+          font-weight: Medium;
+          font-size: 32px;
+          opacity: 1;
+          text-align: left;
+        }
+        .studentprofile {
+          width: 516px;
+          position: absolute;
+          top: 160px;
+          left: 106px;
+          font-weight: ExtraBold;
+          font-size: 60px;
+          opacity: 1;
+          text-align: left;
+         }
+
+        .wrapper {
+          width: 1200px;
+          height: 1050px;
+          background: rgba(234,240,246,1);
+          opacity: 1;
+          position: absolute;
+          top: 483px;
+          left: 83px;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .contentcontainer {
+          width: 317px;
+          height: 935px;
+          background: rgba(29,41,129,1);
+          opacity: 1;
+          position: absolute;
+          top: 543px;
+          left: 120px;
+          border: 0px solid rgba(0,0,0,1);
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          overflow: hidden;
+          }
+
+          .containerwhite {
+          width: 798px;
+          height: 935px;
+          background: rgba(255,255,255,1);
+          opacity: 1;
+          position: absolute;
+          top: 543px;
+          left: 449px;
+          border: 0px solid rgba(0,0,0,1);
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+
+        .studName {
+          width: 310px;
+          color: rgba(255,255,255,1);
+          position: absolute;
+          top: 678px;
+          left: 144px;
+          font-family: Roboto;
+          font-weight: ExtraBold;
+          font-size: 28px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .idNum {
+          width: 269px;
+          color: rgba(255,255,255,1);
+          position: absolute;
+          top: 715px;
+          left: 144px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 19px;
+          opacity: 1;
+          text-align: left;
+        }
+
+          .icon {
+          width: 27px;
+          height: 38px;
+          background: url("images/stuhat.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+          opacity: 1;
+          position: absolute;
+          top: 885px;
+          left: 159px;
+          overflow: hidden;
+        }
+
+        .recProfile {
+          width: 269px;
+          height: 58px;
+          background: rgba(253,253,253,0);
+          opacity: 1;
+          position: absolute;
+          top: 943px;
+          left: 144px;
+          border: 1px solid rgba(255,255,255,1);
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          overflow: hidden;
+        }
+
+        .recFav {
+          width: 269px;
+          height: 58px;
+          background: rgba(253,253,253,0);
+          opacity: 1;
+          position: absolute;
+          top: 874px;
+          left: 144px;
+          border: 1px solid rgba(240,233,0,1);
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          overflow: hidden;
+        }
+
+        .recPub {
+          width: 269px;
+          height: 58px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1015px;
+          left: 144px;
+          border: 1px solid rgba(255,255,255,1);
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          overflow: hidden;
+        }
+
+        .tertiary {
+          width: 269px;
+          height: 58px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1085px;
+          left: 144px;
+          border: 1px solid rgba(255,255,255,1);
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          overflow: hidden;
+        }
+        .myProfile {
+          width: 206px;
+          color: rgba(240,233,0,1);
+          position: absolute;
+          top: 894px;
+          left: 207px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 22px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .icon2 {
+          width: 32px;
+          height: 35px;
+          background: url("images/stuhat.png");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+          opacity: 1;
+          position: absolute;
+          top: 1024px;
+          left: 159px;
+        }
+
+        .age {
+          width: 49px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1006px;
+          left: 739px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .STUDENTID {
+          width: 215px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 814px;
+          left: 479px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .GENDER {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 814px;
+          left: 728px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .MONTH {
+          width: 215px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 948px;
+          left: 479px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .DAY {
+          width: 213px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 948px;
+          left: 727px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .STREET {
+          width: 215px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1073px;
+          left: 479px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .BARANGAY {
+          width: 131px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1073px;
+          left: 708px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .CITY {
+          width: 131px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1073px;
+          left: 853px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .COUNTRY {
+          width: 131px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1073px;
+          left: 996px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .MIDDLEN {
+          width: 213px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 670px;
+          left: 728px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .FIRSTN {
+          width: 215px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 670px;
+          left: 479px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .recfname {
+          width: 242px;
+          height: 59px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 705px;
+          left: 480px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recmname {
+          width: 242px;
+          height: 59px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 705px;
+          left: 727px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .reclname {
+          width: 180px;
+          height: 59px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 705px;
+          left: 974px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recext {
+          width: 57px;
+          height: 59px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 705px;
+          left: 1159px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recstudid {
+          width: 243px;
+          height: 57px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 848px;
+          left: 479px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recmonth {
+          width: 243px;
+          height: 58px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 978px;
+          left: 480px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recpas {
+          width: 209px;
+          height: 61px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1235px;
+          left: 1010px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recpnum {
+          width: 213px;
+          height: 60px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1364px;
+          left: 1007px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recugmail {
+          width: 523px;
+          height: 61px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1235px;
+          left: 481px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recday {
+          width: 242px;
+          height: 58px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 978px;
+          left: 727px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recsex {
+          width: 242px;
+          height: 57px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 848px;
+          left: 727px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recstreet {
+          width: 223px;
+          height: 60px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1107px;
+          left: 482px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recbrgy {
+          width: 140px;
+          height: 60px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1107px;
+          left: 709px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .reccity {
+          width: 138px;
+          height: 60px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1107px;
+          left: 853px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .reccountry {
+          width: 223px;
+          height: 60px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1107px;
+          left: 997px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+
+        .recyear {
+          width: 244px;
+          height: 58px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 978px;
+          left: 974px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .recyearsec {
+          width: 242px;
+          height: 57px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 848px;
+          left: 974px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+        .reccourse {
+          width: 523px;
+          height: 60px;
+          background: rgba(217,217,217,0);
+          opacity: 1;
+          position: absolute;
+          top: 1364px;
+          left: 478px;
+          border: 1px solid rgba(0,0,0,1);
+          overflow: hidden;
+        }
+
+        .month {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1008px;
+          left: 489px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .studentid {
+          width: 213px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 878px;
+          left: 488px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .fname {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 737px;
+          left: 489px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .mname {
+          width: 88px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 737px;
+          left: 737px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .lname {
+          width: 88px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 735px;
+          left: 986px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .ext {
+          width: 52px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 737px;
+          left: 1166px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .yearsec {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 877px;
+          left: 980px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .YEARSEC {
+          width: 204px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 814px;
+          left: 974px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .ugmail {
+          width: 383px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1260px;
+          left: 454px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: center;
+        }
+
+        .sex {
+          width: 54px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 878px;
+          left: 737px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .PASSWORD {
+          width: 119px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1201px;
+          left: 1010px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .UGMAIL {
+          width: 160px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1201px;
+          left: 481px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .COURSE {
+          width: 119px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1330px;
+          left: 480px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .MOBILENO {
+          width: 119px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1330px;
+          left: 1010px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .year {
+          width: 61px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1007px;
+          left: 986px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .YEAR {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 948px;
+          left: 976px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .LNAME {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 668px;
+          left: 974px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .EXT {
+          width: 59px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 668px;
+          left: 1159px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .city {
+          width: 132px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1138px;
+          left: 859px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .phonenum {
+          width: 139px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1380px;
+          left: 1021px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .street {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1137px;
+          left: 491px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+        .barangay {
+          width: 134px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1138px;
+          left: 715px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .course {
+          width: 568px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1385px;
+          left: 439px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 16px;
+          opacity: 1;
+          text-align: center;
+        }
+
+        .country {
+          width: 132px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 1138px;
+          left: 1004px;
+          font-family: Roboto;
+          font-weight: Medium;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .MYPROFILE {
+          width: 244px;
+          color: rgba(0,35,102,1);
+          position: absolute;
+          top: 550px;
+          left: 483px;
+          font-family: Roboto;
+          font-weight: ExtraBold;
+          font-size: 40px;
+          opacity: 1;
+          text-align: left;
+        }
+
+        .SEX {
+          width: 214px;
+          color: rgba(0,0,0,1);
+          position: absolute;
+          top: 814px;
+          left: 728px;
+          font-family: Roboto;
+          font-weight: Bold;
+          font-size: 20px;
+          opacity: 1;
+          text-align: left;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<!--Header-->
+<div th:replace="components/header :: header"></div>
+
+<div>
+
+</div>
+<!-- TODO Ronabel -->
+
+<div class="container-fluid bg-primary d-flex align-items-center" style="width: 100vw; height: 250px;
+    background-image: url('images/top.png'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text_color_background shadowed-text studentprofile align-items-center" style="text-align: left;">STUDENT PROFILE</h1>
+                <h1 class="text_color_secondary shadowed-text accountinformation align-items-center" style="text-align: left; ">ACCOUNT INFORMATION</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper align-items-center"></div>
+<div class="contentcontainer align-items-center"></div>
+<div class="containerwhite"></div>
+
+<div class="icon"></div>
+<div class="recProfile"></div>
+<div class="recFav"></div>
+<div class="recPub"></div>
+<div class="tertiary"></div>
+
+<span class="studName">RYAN JAY B. ACOSTA</span>
+<span class="idNum">STUDENT ID# K11832936</span>
+<span class="myProfile">MY PROFILE</span>
+<div class="icon2"></div>
+
+<span class="FIRSTN">FIRST NAME:</span>
+<span class="MIDDLEN">MIDDLE NAME:</span>
+<span class="LNAME">LAST NAME:</span>
+
+<span class="fname">RYAN JAY</span>
+<span class="mname">BAYAN</span>
+<span class="ugmail">racosta.a11234567@umak.edu.ph</span>
+
+<span class="lname">ACOSTA</span>
+<span class="ext">JR.</span>
+<span class="yearsec">III-ACDS</span>
+<span class="YEARSEC">YEAR AND SECTION:</span>
+
+<span class="STUDENTID">STUDENT ID:</span>
+<span class="SEX">SEX:</span>
+<span class="MONTH">MONTH:</span>
+<span class="DAY">DAY:</span>
+<span class="STREET">STREET:</span>
+<span class="BARANGAY">BARANGAY:</span>
+<span class="CITY">CITY:</span>
+<span class="COUNTRY">COUNTRY:</span>
+
+<span class="age">28</span>
+<span class="month">SEPTEMBER</span>
+<span class="studentid">A01234567</span>
+<span class="sex">MALE</span>
+
+<span class="PASSWORD">PASSWORD:</span>
+<span class="UGMAIL">UMAK GMAIL:</span>
+<span class="COURSE">COURSE:</span>
+<span class="MOBILENO">MOBILE NO.:</span>
+
+<span class="year">2002</span>
+
+<span class="YEAR">YEAR:</span>
+<span class="EXT">EXT.:</span>
+
+<span class="city">MAKATI CITY</span>
+<span class="phonenum">09999295702</span>
+<span class="street">J.P. RIZAL EXTENSION</span>
+<span class="barangay">WEST REMBO</span>
+
+<span class="course">BACHELOR OF SCIENCE IN  COMPUTATIONAL AND DATA SCIENCE</span>
+<span class="country">PHILIPPINES</span>
+<span class="MYPROFILE">MY PROFILE</span>
+
+
+<div class="recfname"></div>
+<div class="recmname"></div>
+<div class="reclname"></div>
+<div class="recext"></div>
+<div class="recstudid"></div>
+<div class="recmonth"></div>
+<div class="recpas"></div>
+<div class="recpnum"></div>
+<div class="recugmail"></div>
+<div class="recday"></div>
+<div class="recsex"></div>
+<div class="recstreet"></div>
+<div class="recbrgy"></div>
+<div class="reccity"></div>
+<div class="reccountry"></div>
+<div class="recyear"></div>
+<div class="recyearsec"></div>
+<div class="reccourse"></div>
+
+</body>
+</html>

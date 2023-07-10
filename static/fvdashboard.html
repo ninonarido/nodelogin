@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+
+<head>
+  <title>Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .status {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .status::-webkit-scrollbar {
+    width: 0;
+  }
+
+    .container-fluid {
+      height: 100%;
+    }
+
+    .container_ra{
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+      .ra::-webkit-scrollbar {
+    width: 0;
+  }
+
+    .rapprove::-webkit-scrollbar {
+    width: 0;
+  }
+  </style>
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <!-- 1st column for logo and buttons -->
+    <div class="col-auto bg_atlas_primary d-flex flex-column justify-content-start" style="width: 300px; height: 100vh;">
+      <div class="row pb-2 mt-2" style="border-bottom: 2px solid white;">
+        <img src="images/atlas_logov1.png" alt="Logo" style="height: 45px; width:150px; margin:5px;">
+      </div>
+      <div class="row rc-10 justify-content-start p-2 mt-2">
+        <!-- make the color of the button assigned to you "bg_atlas_info." -->
+        <!-- check href of each button. rename if not the same -->
+        <a href="fvdashboard.html" class="btn bg_atlas_info text_color_background rc-10 mt-5 text-start d-flex align-items-center faculty-view" style="height: 55px;">
+          <img src="images/dashboard_icon.png" class="icon" style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">DASHBOARD</span>
+        </a>
+        <!-- change the bg_atlas_info to bg_atlas_primary -->
+        <a href="fvresearchcoordinator.html" class="btn bg_atlas_primary text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view" style="height: 55px;">
+          <img src="images/rescoordinator_icon.png" class="icon" style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">RESEARCH COORDINATOR</span>
+        </a>
+        <a href="fvreviewer.html" class="btn bg_atlas_primary text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view" style="height: 55px;">
+          <img src="images/reviewer_icon.png" class="icon" style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">REVIEWER</span>
+        </a>
+        <a href="fvdepartmenthead.html" class="btn bg_atlas_primary text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view" style="height: 55px;">
+          <img src="images/dephead_icon.png" class="icon" style="width: 23px; height: 26px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">DEPARTMENT HEAD</span>
+        </a>
+        <a href="fvcollegedean.html" class="btn bg_atlas_primary text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view" style="height: 55px;">
+          <img src="images/colldean_icon.png" class="icon" style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">COLLEGE DEAN</span>
+        </a>
+      </div>
+
+      <div class="d-flex flex-column justify-content-end mx-3 mb-3" style="height: 100vh;">
+        <a href="fvfacultyprofile.html" class="bg_atlas_primary faculty-profile-view p-2 rc-10">
+          <div class="row">
+            <div class="col-auto">
+              <img src="images/profile_icon.png" alt="Image" style="margin-bottom: -5px;">
+            </div>
+            <div class="col" style="margin-left: -10px">
+              <div class="row text_color_background align-items-center">
+                <p class="mb-0" style="font-size: 16px;">Angel Macatuhay</p>
+                <p class="mb-0" style="font-size: 12px;">CCIS Department</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="row mx-4 mt-2">
+          <a href="signin.html" class="btn bg-danger text_color_background rc-10 mt-2 text-start" style="width: 120px; height: 40px; display: flex; justify-content: center; align-items: center; color: var(--background);">
+            <img src="images/logout_icon.png" class="icon" style="width: 16px; height: 16px;">
+            <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">Logout</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+<!--    2nd column for the contents of the dashboard -->
+
+    <div class="col bg_atlas_light d-flex flex-column align-items-end" style="height:100vh; width:100vh;">
+      <div class="container mt-3" style="flex-grow: 1;">
+        <div class="status" style="max-height: 170px; overflow-x: auto;">
+          <div class="row flex-nowrap">
+            <div class="col">
+              <div class="card bg_atlas_primary text_color_background " style="width: 300px; height: 130px; margin-right: 2px;  ">
+                <div class="card-body">
+                  <h5 class="card-title text_color_secondary ">Total Paper/s:</h5>
+                  <img src="images/totalPapers_icon.png" class="icon" style="position:Absolute; width: 60px; height: 60px; margin-left:200px;">
+                  <p class="card-text text-center text_color_secondary">10</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card bg_atlas_primary text_color_background" style="width: 300px; height: 130px; margin-right: 2px;">
+                <div class="card-body">
+                  <h5 class="card-title text_color_secondary">Accepted Paper/s:</h5>
+                  <img src="images/acceptedPaper_icon.png" class="icon" style="position:Absolute; width: 60px; height: 60px; margin-left:200px;">
+                  <p class="card-text text-center text_color_secondary">5</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card bg_atlas_primary text_color_background" style="width: 300px; height: 130px; margin-right: 2px;">
+                <div class="card-body">
+                  <h5 class="card-title text_color_secondary">Rejected Paper/s:</h5>
+                  <img src="images/rejectedPaper_icon.png" class="icon" style="position:Absolute; width: 60px; height: 60px; margin-left:200px;">
+                  <p class="card-text text-center text_color_secondary">4</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card bg_atlas_primary text_color_background" style="width: 300px; height: 130px; margin-right: 2px;">
+                <div class="card-body">
+                  <h5 class="card-title text_color_secondary">Pending Paper/s:</h5>
+                  <img src="images/pendingPaper_icon.png" class="icon" style="position:Absolute; width: 60px; height: 60px; margin-left:200px;">
+                  <p class="card-text text-center text_color_secondary">1</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card bg_atlas_primary text_color_background" style="width: 300px; height: 130px; margin-right: 2px;">
+                <div class="card-body">
+                  <h5 class="card-title text_color_secondary">Published Paper/s:</h5>
+                  <img src="images/publishedPaper_icon.png" class="icon" style="position:Absolute; width: 60px; height: 60px; margin-left:200px;">
+                  <p class="card-text text-center text_color_secondary">3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-1 pr-0">
+            <div class="container-fluid bg_atlas_primary" style="height: 40px; width: 2px; "></div>
+          </div>
+          <div class="col">
+            <h1 style="font-size: 25px;">Recently Accessed</h1>
+          </div>
+<!--  Cards for recently accessed        -->
+        <div class=" row d-flex mt-3">
+          <div class="ra" style="max-height: 170px; overflow-x: auto;">
+            <div class="row flex-nowrap">
+              <div class="col">
+                <div class="card bg_atlas_background text_color"  style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                  <div class="card-body">
+                    <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                    <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                  <div class="card-body">
+                    <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                    <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                  <div class="card-body">
+                    <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                    <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                  <div class="card-body">
+                    <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                    <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                  <div class="card-body">
+                    <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                    <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+ <!--  end of Cards for recently accessed -->
+          <div class="row mt-5">
+            <div class="col-1 pr-0">
+              <div class="container-fluid bg_atlas_primary" style="height: 40px; width: 2px; "></div>
+            </div>
+
+            <div class="col">
+              <h1 style="font-size: 25px;">Recently Approved</h1>
+            </div>
+          </div>
+          <!--  Cards for recently approved       -->
+          <div class=" row d-flex mt-3">
+            <div class="rapprove" style="max-height: 170px; overflow-x: auto;">
+              <div class="row flex-nowrap">
+                <div class="col">
+                  <div class="card bg_atlas_background text_color"  style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                    <div class="card-body">
+                      <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                      <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px; ">
+                    <div class="card-body">
+                      <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                      <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                    <div class="card-body">
+                      <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                      <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                    <div class="card-body">
+                      <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                      <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card bg_atlas_background text_color" style="width: 300px; height: 130px; margin-right: 2px; border-radius: 10px;">
+                    <div class="card-body">
+                      <h5 class="card-title text_color fw-bold " style="font-size: 22px;" >The impact of Covid-19</h5>
+                      <p class="card-text  text_color"  style="font-size: 16px;">Authors: Marielle Zabala, Ryan Jay Acosta, Joricel Roldan</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  end of Cards for recently approved -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

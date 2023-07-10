@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+  <title>Research Coordinator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+
+  <style>
+
+    .rec {
+    background-color: var(--background);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 155px;
+    left: 430px;
+    position: absolute;
+    top: 120px;
+    width: 810px;
+    }
+
+     .text{
+    background-color: #1d2981;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    font-size:14px;
+    text-align: center;
+    margin-left: 30px;
+    }
+
+    .date{
+    margin-bottom: 0px;
+    margin-left: 30px;
+    }
+
+    .pubauth{
+    margin-bottom: 0px;
+    }
+
+    .boldtxt{
+    margin-bottom: 0px;
+    font-weight:600;
+    }
+
+    .viewbtn{
+      position: absolute;
+      top: 110px;
+      left: 650px;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      border-radius: 5px;
+      padding-left: 25px;
+      padding-right: 25px;
+      width: 120px;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- 1st column for logo and buttons -->
+    <div class="col-auto bg_atlas_primary d-flex flex-column justify-content-start position-fixed"
+         style="width: 300px; height: 100vh;">
+      <div class="row pb-2 mt-2" style="border-bottom: 2px solid white;">
+        <img src="images/atlas_logov1.png" alt="Logo" style="height: 45px; width:150px; margin:5px;">
+      </div>
+      <div class="row rc-10 justify-content-start p-2 mt-2">
+        <!-- make the color of the button assigned to you "bg_atlas_info." -->
+        <!-- check href of each button. rename if not the same -->
+        <a href="fvdashboard.html"
+           class="btn bg_atlas_primary text_color_background rc-10 mt-5 text-start d-flex align-items-center faculty-view"
+           style="height: 55px;">
+          <img src="images/dashboard_icon.png" class="icon" style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">DASHBOARD</span>
+        </a>
+        <!-- change the bg_atlas_info to bg_atlas_primary -->
+        <a href="fvresearchcoordinator.html"
+           class="btn bg_atlas_primary text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view"
+           style="height: 55px;">
+          <img src="images/rescoordinator_icon.png" class="icon" style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">RESEARCH COORDINATOR</span>
+        </a>
+        <a href="fvreviewer.html"
+           class="btn bg_atlas_primary text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view"
+           style="height: 55px;">
+          <img src="images/reviewer_icon.png"
+               class="icon"
+               style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">REVIEWER</span>
+        </a>
+        <a href="fvdepartmenthead.html"
+           class="btn bg_atlas_info text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view"
+           style="height: 55px;">
+          <img src="images/dephead_icon.png" class="icon" style="width: 23px; height: 26px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">DEPARTMENT HEAD</span>
+        </a>
+        <a href="fvcollegedean.html"
+           class="btn bg_atlas_primary text_color_background rc-10 mt-2 text-start d-flex align-items-center faculty-view"
+           style="height: 55px;">
+          <img src="images/colldean_icon.png" class="icon" style="width: 28px; height: 23px;">
+          <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">COLLEGE DEAN</span>
+        </a>
+      </div>
+      <div class="d-flex flex-column justify-content-end mx-3 mb-3" style="height: 100vh;">
+        <a href="fvfacultyprofile.html" class="bg_atlas_primary faculty-profile-view p-2 rc-10">
+          <div class="row">
+            <div class="col-auto">
+              <img src="images/profile_icon.png" alt="Image" style="margin-bottom: -5px;">
+            </div>
+            <div class="col" style="margin-left: -10px">
+              <div class="row text_color_background align-items-center">
+                <p class="mb-0" style="font-size: 16px;">Angel Macatuhay</p>
+                <p class="mb-0" style="font-size: 12px;">CCIS Department</p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <div class="row mx-4 mt-2">
+          <a href="signin.html" class="btn bg-danger text_color_background rc-10 mt-2 text-start" style="width: 120px; height: 40px; display: flex; justify-content: center; align-items: center; color: var(--background);">
+            <img src="images/logout_icon.png" class="icon" style="width: 16px; height: 16px;">
+            <span style="margin-left: 10px; font-size: 16px; font-weight: medium;">Logout</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- 2nd column for the process of paper -->
+    <div style="height: 160vh">
+    <div class="col d-flex justify-content-center align-items-center bg_atlas_light"
+         style="height: 150vh; width: 980px; margin-left:340px; margin-top:20px; position:absolute;">
+      <!-- Content for the centered right side column goes here -->
+
+      <div>
+        <img src="images/dephead/DPHead.png" style="top:20px; left:20px; position:absolute; width: 80px; height: 70px;">
+        <span style="position: absolute; top: 40px; left: 110px; font-size: 20px; font-weight: bold; color: black;">DEPARTMENT HEAD</span>
+        <div class="dropdown custom-dropdown" style="position: absolute; top: 45px; left: 815px;">
+          <select class="btn bg_atlas_primary custom-dropdown" id="dropdownButton" style="text-align: center;color:yellow;">
+
+          <option value="COE" style="text-align: left;">COE</option>
+            <option value="CCIS" style="text-align: left;">CCIS</option>
+            <option value="CTHM" style="text-align: left;">CTHM</option>
+            <option value="CTM" style="text-align: left;">CTM</option>
+            <option value="CBFS" style="text-align: left;">CBFS</option>
+            <option value="ION" style="text-align: left;">ION</option>
+            <option value="IOP" style="text-align: left;">IOP</option>
+            <option value="CGPP" style="text-align: left;">CGPP</option>
+            <option value="CAL" style="text-align: left;">CAL</option>
+            <option value="CHK" style="text-align: left;">CHK</option>
+            <option value="COS" style="text-align: left;">COS</option>
+            <option value="IOIHS" style="text-align: left;">IOIHS</option>
+            <option value="CCSE" style="text-align: left;">CCSE</option>
+            <option value="CCAPS" style="text-align: left;">CCAPS</option>
+            <option value="SOL" style="text-align: left;">SOL</option>
+            <option value="IOA" style="text-align: left;">IOA</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!--every study-->
+    <div class="rec" style="top: 145px;">
+      <h6  style="margin-left: 130px;margin-top: 10px;font-weight: 600;">Legal and Ethical Considerations for Digital Recreations of Cultural Heritage</h6>
+      <table style="margin-left: 30px;margin-top: 15px;">
+        <tr>
+          <td> <p class="pubauth" >Published: </p></td>
+          <td> <p class="date">2021 June 28</p></td>
+        </tr>
+        <tr>
+          <td>  <p class="pubauth">Author/s: </p></td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+        <tr>
+          <td> <p class="boldtxt">Reviewed By: </p></td>
+          <td> <p class="text"> <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+        <tr>
+          <td> <p class="boldtxt" >Research Coordinator: </p> </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+      </table>
+        <div class="btn bg_atlas_primary viewbtn" onmouseover="this.style.color='yellow';" onmouseout="this.style.color='white';" onclick="showPopup()">VIEW</div>
+      </div>
+    </div>
+    <div class="rec" style="top: 330px;">
+      <h6  style="margin-left: 130px;margin-top: 10px;font-weight: 600;">Legal and Ethical Considerations for Digital Recreations of Cultural Heritage</h6>
+      <table style="margin-left: 30px;margin-top: 15px;">
+        <tr>
+          <td> <p class="pubauth">Published: </p></td>
+          <td> <p class="date">2021 June 28</p></td>
+        </tr>
+        <tr>
+          <td> <p class="pubauth">Author/s: </p></td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+        <tr>
+          <td> <p class="boldtxt">Reviewed By: </p></td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+        <tr>
+          <td> <p class="boldtxt">Research Coordinator: </p></td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+      </table>
+      <div class="btn bg_atlas_primary viewbtn" onmouseover="this.style.color='yellow';" onmouseout="this.style.color='white';" onclick="showPopup()">VIEW</div>
+      </div>
+    </div>
+
+    <div class="rec" style="top: 525px;">
+      <h6 style="margin-left: 130px;margin-top: 10px;font-weight: 600;" >Legal and Ethical Considerations for Digital Recreations of Cultural Heritage</h6>
+      <table style="margin-left: 30px;margin-top: 15px;">
+        <tr>
+          <td> <p class="pubauth">Published: </p></td>
+          <td> <p class="date">2021 June 28</p></td>
+        </tr>
+        <tr>
+          <td> <p class="pubauth">Author/s: </p></td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+        <tr>
+          <td> <p class="boldtxt">Reviewed By: </p></td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+        <tr>
+          <td> <p class="boldtxt">Research Coordinator: </p></td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+      </table>
+
+      <div class="btn bg_atlas_primary viewbtn" onmouseover="this.style.color='yellow';" onmouseout="this.style.color='white';" onclick="showPopup()">VIEW</div>
+      </div>
+
+    </div>
+
+    <div class="rec" style="top: 715px;">
+      <h6 style="margin-left: 130px;margin-top: 10px;font-weight: 600;" >Legal and Ethical Considerations for Digital Recreations of Cultural Heritage</h6>
+      <table style="margin-left: 30px;margin-top: 15px;">
+        <tr>
+          <td> <p class="pubauth">Published: </p></td>
+          <td> <p class="date">2021 June 28</p></td>
+        </tr>
+        <tr>
+          <td> <p class="pubauth" >Author/s: </p></td> <td>
+          <p class="text"> <span style="padding: 8px;">Jose Magandad</span> </p>
+        </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+        <tr>
+          <td> <p class="boldtxt">Reviewed By: </p></td>
+          <td> <p class="text"> <span style="padding: 8px;">Jose Magandad</span> </p></td>
+          <td> <p class="text"><span style="padding: 8px;">Jose Magandad</span> </p></td>
+        </tr>
+
+        <tr>
+          <td> <p  class="boldtxt">Research Coordinator: </p> </td>
+          <td> <p class="text">
+            <span style="padding: 8px;">Jose Magandad</span> </p>
+          </td>
+        </tr>
+      </table>
+
+      <div class="btn bg_atlas_primary viewbtn" onmouseover="this.style.color='yellow';" onmouseout="this.style.color='white';" onclick="showPopup()">VIEW</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

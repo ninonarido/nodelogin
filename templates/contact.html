@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+    <title>Atlas | Contact Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <script type="text/javascript" src="/js/main.js"></script>
+
+</head>
+
+<body>
+<!--thirdy-->
+<!--Header-->
+<div th:replace="components/header :: header"></div>
+
+
+<!-- TODO Marielle -->
+<!--for container for categories-->
+<div class="container-fluid px-0" style=" background-image:url('images/banner_contactUs.png'); position:relative;background-size: cover;height: 350px; background-position-y: 35%;">
+    <div class="row">
+        <div class="col-md-12 text-center mt-5 pt-5">
+            <h1 class="text_color_background fw-bold shadowed-text"  style="text-transform: uppercase; font-size:60px;">contact us about atlas</h1>
+            <div class="col-md-8 offset-md-2 text-center">
+                <p class="text_color_background fw-regular shadowed-text mt-5" >Whether you have questions about accessing
+                    research materials, submitting your work, or navigating the repository's features, our friendly
+                    and knowledgeable staff are here to help. We value your input and encourage you to share any
+                    suggestions or comments that can help us enhance our services.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--form-->
+    <div class="container" style="width:1200px; postion:Relative; background-color:#EAF0F6; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+        <div class="row">
+            <div class="col-md-5 ">
+                <div class="row">
+                    <!--Phone-->
+                    <div class="col-md-12 px-5 mb-4" style="margin-top:100px;">
+                        <div class="phone details">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-phone-alt fa-2x ms-5"></i> <!-- Added ms-2 class for left margin -->
+                                </div>
+                                <div class="col">
+                                    <div class="topic fw-bold">CALL US</div>
+                                    <div class="text-one">+8123 4567</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--email-->
+                    <div class="col-md-12 px-5 py-4">
+                        <div class="email details">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-envelope fa-2x ms-5"></i> <!-- Added ms-2 class for left margin -->
+                                </div>
+                                <div class="col">
+                                    <div class="topic fw-bold">EMAIL US</div>
+                                    <div class="text-one">researchrepository@umak.edu.ph</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Office Hour-->
+                    <div class="col-md-12 px-5 py-4">
+                        <div class="Office details">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-clock fa-2x ms-5"></i> <!-- Added ms-2 class for left margin -->
+                                </div>
+                                <div class="col">
+                                    <div class="topic fw-bold">OFFICE HOURS</div>
+                                    <div class="text-one">Monday to Friday, 9:00 AM to 5:00 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Office Hour-->
+                    <div class="col-md-12 px-5 py-4">
+                        <div class="address details">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-map-marker-alt fa-2x ms-5"></i> <!-- Added ms-2 class for left margin -->
+                                </div>
+                                <div class="col">
+                                    <div class="topic fw-bold">LOCATION</div>
+                                    <div class="text-one">J.P. Rizal Extension, West Rembo, Makati City,<br> Metro Manila, Philippines</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 ">
+                <div class="container-fluid my-5" style="background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="topic-text fw-bold mt-4 mb-3 "><h2>CONTACT US</h2></div>
+                                <form th:action="@{/contact}" th:object="${contactForm}" method="post">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" style="border: 1px solid black; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);" id="Name" placeholder="Enter your name" th:field="*{name}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" style="border: 1px solid black; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);" id="Email" placeholder="Enter a valid email address" th:field="*{email}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" style="border: 1px solid black; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);" id="Subject" placeholder="Enter the Subject" th:field="*{subject}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" id="Message" style="border: 1px solid black; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);"  rows="7" placeholder="Enter your Message" th:field="*{message}"></textarea>
+                                    </div>
+                                    <!-- Submit Button -->
+                                    <div style="text-align: center;">
+                                        <button type="submit" class="btn btn-primary fw-bold mb-4" style="font-size:30px; width:375px; height:75px; background-color: yellow; color: black; border-color: black;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); border-radius: 20px;">SUBMIT</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TODO  -->
+
+    <!-- Image Banner -->
+
+    <div class="container-fluid bg-primary d-flex align-items-center" style="width: 100vw; height: 350px; background-image: url('images/banner_contactUs.png'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text_color_background fw-bolder shadowed-text ">CONTACT US ABOUT ATLAS</h1>
+                    <p class="text_color_background">Whether you have questions about accessing research materials, submitting your work, or navigating the repository's features,<br> our friendly and knowledgeable staff are here to help. We value your input and encourage you <br> to share any suggestions or comments that can help us enhance our services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of Image Banner -->
+
+</div>
+
+</body>
+</html>

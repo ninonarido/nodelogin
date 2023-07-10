@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+    <title>Bootstrap 5 Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+<!--thirdy-->
+<!--Header-->
+<div class="container-fluid bg_atlas_primary">
+    <div class="container py-3 ">
+      <div class="row align-items-center">
+        <!-- Logo -->
+        <div class="col-xxl-5 col-xl-3 col-lg-2 col-md-12 col-sm-12   d-flex">
+            <img src="images/atlas_logov1.png" class="logo_size align-self-start" alt="">
+          </div>
+          
+        <!-- Navigation Menu -->
+        <div class="col-xxl-4 col-xl-6 col-lg-7 col-md-7 col-sm-12 d-flex justify-content-center ">
+          <ul class="nav-menu">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="#">Collaboration</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xxl-2  col-xl-2 col-lg-2  col-md-2 col-sm-12 d-flex justify-content-center">
+            <button class="btn bg_atlas_secondary text-start" style="width: 150px;">
+              Search <span class="float-end"><i class="fas fa-search ml-auto " ></i></span>
+            </button>
+          </div>
+
+          <div class="col-xxl-1 col-xl-1 col-lg-1  col-md-2 col-sm-12 d-flex justify-content-center">
+            <i class="bi bi-person-fill text-white" style="font-size: 34px;"></i>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<div>
+
+</div>
+<!-- TODO Thirdy -->
+
+    <!-- Image Banner -->
+    <div class="container-fluid bg-primary d-flex align-items-center" style="width: 100vw; height: 160px; background-image: url('images/banner.png'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text_color_secondary fw-bolder shadowed-text" >ATLAS</h1>
+                    <h1 class="text_color_background fw-bold shadowed-text">UMAK RESEARCH REPOSITORIES</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--categories-->
+    <div class="container bg_atlas_primary mt-3 rc-10 ">
+        <h4 class="text_color_secondary py-2">Categories</h4>
+    </div>
+
+
+<!--Categories Card-->
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col bg_atlas_background mx-2 rc-10" >
+            <div class="row py-3 px-2">
+                <div class="col-5">
+                    <h3>COE</h3>
+                    <p>College of Education</p>
+                </div>
+                <div class="col-2"></div> <!-- Empty column to create space -->
+                <div class="col text-end">
+                    <img src="images/college_logo/ce.png" alt="" style="max-width: 80px; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+        <div class="col bg_atlas_background mx-2 rc-10" >
+            <div class="row py-3 px-2">
+                <div class="col-8">
+                    <h5>CAL</h5>
+                    <p class="text-small">College of Arts And Letter</p>
+                </div>
+                <div class="col text-end">
+                    <img src="images/college_logo/cal.png" alt="" style="width: 50px; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+        <div class="col bg_atlas_background mx-2 rc-10" >
+            <div class="row py-3 px-2">
+                <div class="col-5">
+                    <h3>COS</h3>
+                    <p>College of Science</p>
+                </div>
+                <div class="col-2"></div> <!-- Empty column to create space -->
+                <div class="col text-end">
+                    <img src="images/college_logo/cs.png" alt="" style="max-width: 80px; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+        <div class="col bg_atlas_background mx-2 rc-10" >
+            <div class="row py-3 px-2">
+                <div class="col-5">
+                    <h3>CCSE</h3>
+                    <p>College of Construction Sciences and Engineering</p>
+                </div>
+                <div class="col-2"></div> <!-- Empty column to create space -->
+                <div class="col text-end">
+                    <img src="images/college_logo/cse.jpg" alt="" style="max-width: 80px; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="row"></div>
+</div>
+
+
+
+
+</body>
+</html>

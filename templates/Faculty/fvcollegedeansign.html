@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>College Dean Sign</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+<body>
+
+
+
+
+<!--two columns-->
+<div class="container-fluid">
+    <div class="row">
+        <!-- 1st column for logo and buttons -->
+        <div th:replace="components/sidebar :: sidebar"></div>
+
+    <!--    main    -->
+<!--    1st Column    -->
+        <div class="col offset-md-3 " style=" margin-right:30px; height: 130vh; ">
+
+            <div class="row bg_atlas_light" style=" padding-left:30px; padding-right:30px; height: 200px; margin-top:20px; align-items:center">
+                <div class="row ms-4">
+                <div class="col-3 mx-4 ps-3 mt-4" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h5><b>REVIEWER</b></h5>
+                    <img src="images/reviewer.svg" alt="Research Coordinator" style="height: 80px; width:150px; margin:5px;">
+
+                </div>
+                <div class="col-3 mx-5" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h5><b>DEPARTMENT<br> HEAD</b></h5>
+                    <img src="images/depthead.svg" alt="Research Coordinator" style="height: 80px; width:150px; margin:5px;">
+
+                </div>
+                <div class="col-3" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <h5><b>COLLEGE <br>DEAN</b></h5>
+                    <img src="images/collegedean.svg" alt="Research Coordinator" style="height: 80px; width:150px; margin:5px;">
+                </div>
+                </div>
+
+
+                <!--status bar-->
+
+                    <div class="row ms-5 ps-4">
+                        <div class="col ms-5">
+                <div class="status-bar mt-1 ms-5 mb-3 ">
+                    <div class="line stage1" style="width: 100%; background-color: var(--success);"></div>
+                    <div class="line stage2" style="width: 50%; background-color: var(--success); left: 50%;"></div>
+                    <div class="indicator bg_atlas_success stage1" style="left: 0%;">
+                        <div class="div-class">
+                            <!-- Other content within the div -->
+                            <i class="fa-solid fa-check ps-1" style="color: #ffffff;"class="loading-icon width: 70%; height: auto; position: absolute; top: 50%; margin-left: 20%; transform: translate(-50%, -50%);" alt="Loading Icon" ></i>
+                        </div>
+                    </div>
+                    <div class="indicator bg_atlas_success stage2" style="left: 51%;">
+                        <div class="div-class">
+                            <!-- Other content within the div -->
+                            <i class="fa-solid fa-check ps-1" style="color: #ffffff;"class="loading-icon" alt="Loading Icon" style="width: 70%; height: auto; position: absolute; top: 50%; margin-left: 15%; transform: translate(-50%, -50%);"></i>
+
+                        </div>
+                    </div>
+                    <div class="indicator bg_atlas_pending stage3" style="left: 100%;">
+                        <img src="images/loading_logo_status_bar.png" class="loading-icon" alt="Loading Icon" style="width: 70%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+
+                    </div>
+                </div>
+                </div>
+                    </div>
+
+            </div>
+
+
+
+
+<!--2nd Column  -->
+          <div class="row bg_atlas_light mt-3 justify-content-center">
+
+        <div class="col-md-12 mt-5 d-flex align-items-center">
+                    <img src="images/edit_icon.png" style="height:100px;width:100px;margin-left:53px;" alt="Circle with Pen">
+                    <h4 style="font-weight:bold; margin-left: 10px;">COLLEGE DEAN</h4>
+                </div>
+              <div class="col-10 my-5 d-flex ">
+                  <button class="btn btn-primary  bg_atlas_primary " style=" width:895px; display: relative; align-items: center; font-size:40px; text-align:end;" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                      Professor Danilo C. Sabado, DT (CCIS)
+                      <span class="dropdown-caret" style="margin-left:20px;"></span>
+                  </button>
+
+              </div>
+
+<!--Upload Files-->
+              <div class="col-9" style="border: 10px solid #1D2981; border-radius: 10px; position:relative">
+                  <div class="row justify-content-center">
+                      <div class="col md-6 my-5 text-center">
+                          <img src="images/upload_icon.png" alt="upload" style="height:40px; width:40px">
+                          <p style="color:#2A9EDE;font-weight: bold;">Upload Image <br> or <br> Drag & Drop your signature here</p>
+                          <input type="file" class="file-upload-input" data-mdb-disabled-remove-btn="true" data-mdb-file-upload="file-upload" accept=""
+                                 style="z-index: 1;width: 100%;height: 100%;position: absolute;top: 0;left: 0;opacity: 0;cursor: pointer;" id="file-input">
+                          <div id="file-list"></div>
+                          <div id="image-preview"></div>
+                      </div>
+                  </div>
+              </div>
+
+<!--bUTTONS OF CANCEL,SAVE,PUBLISH-->
+              <div class="row mt-3 me-5  justify-content-end">
+                  <button type="button" class="col-1 btn btn-primary bg_atlas_primary text_color_secondary" style="border-radius: 10px; ">Cancel</button>
+                  <button type="button" class="col-1 ms-2  btn btn-primary bg_atlas_primary  text_color_secondary" style="border-radius: 10px; margin-right:115px;">Save</button>
+                  <div class="row  mt-2 justify-content-end ">
+                      <button type="button" class="col-2 ms-2  btn btn-success bg_atlas_success text_color_secondary" style="border-radius: 10px; margin-right:120px;">PUBLISH</button>
+
+                  </div>
+              </div>
+
+        </div>
+
+          </div>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/5a22f41834.js" crossorigin="anonymous"></script>
+<script>
+    // Get the file input element
+    const fileInput = document.getElementById('file-input');
+    // Get the file list container element
+    const fileList = document.getElementById('file-list');
+    // Get the image preview container element
+    const imagePreview = document.getElementById('image-preview');
+
+    // Event listener for when files are selected
+    fileInput.addEventListener('change', function() {
+        // Clear the file list container
+        fileList.innerHTML = '';
+        // Clear the image preview container
+        imagePreview.innerHTML = '';
+
+        // Get the selected files
+        const files = fileInput.files;
+
+        // Iterate through the files and display their names
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const listItem = document.createElement('p');
+            listItem.textContent = file.name;
+            fileList.appendChild(listItem);
+
+            // Display image preview if the file is an image
+            if (file.type.startsWith('image/')) {
+                const image = document.createElement('img');
+                image.classList.add('img-thumbnail');
+                image.style.maxWidth = '100%';
+                image.style.height = 'auto';
+                image.src = URL.createObjectURL(file);
+                imagePreview.appendChild(image);
+            }
+        }
+    });
+</script>
+</body>
+</html>

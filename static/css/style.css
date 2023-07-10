@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* Configure color */
+:root {
+  /* color configuration */
+    --primary: #1D2981;
+    --secondary: #F0E900;
+    --dark_secondary: #F6BE00;
+    --success: #31C451;
+    --danger: #DF0020;
+    --pending: #F89E32;
+    --light: #EAF0F6;
+    --light2: #D7D9E4;
+    --surface: #F5F5F5;
+    --info: #2A9EDE;
+    --background: #FFFFFF;
+    --frame: #D9D9D9;
+    --text: #151414;
+    --text_secondary: #343030;
+    --text_highlight: #8A7171;
+
+}
+
+body {
+  background-color:  var(--surface);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* text_color */
+.text_color {
+    color: var(--text);
+    font-size: 30px;
+}
+
+.text_color_secondary {
+    color: var(--secondary);
+}
+
+.text_color_primary {
+    color: var(--primary);
+}
+
+.text_color_background {
+  color: var(--background);
+}
+
+.text_color_danger {
+  color: var(--danger);
+
+}
+
+.text_color_light{
+  color: var(--light);
+}
+
+
+.text_color_text_secondary{
+  color: var(--text_secondary);
+}
+
+.text_color_text_highlight{
+  color: var(--text_highlight);
+}
+
+ /* config background */
+ .bg_atlas_primary{
+    background-color: var(--primary);
+ }
+
+  .bg_atlas_secondary{
+   background-color: var(--secondary);
+ }
+
+ .bg_atlas_success{
+  background-color: var(--success);
+}
+
+ .bg_atlas_danger{
+  background-color: var(--danger);
+}
+
+ .bg_atlas_pending{
+  background-color: var(--pending);
+}
+
+.bg_atlas_light{
+  background-color: var(--light);
+}
+
+.bg_atlas_light2{
+  background-color: var(--light2);
+}
+
+.bg_atlas_surface{
+  background-color: var(--surface);
+}
+
+.bg_atlas_info{
+  background-color: var(--info);
+}
+
+.bg_atlas_background{
+  background-color: var(--background);
+}
+
+.bg_atlas_dark_secondary{
+  background-color: var(--background);
+}
+
+
+ /* logo size */
+ .logo_size{
+  height: 50px;
+  width: auto;
+ }
+/*status bar */
+.status-bar {
+    position: relative;
+    width:69%;
+    height: 5px;
+    margin-left: -10px;
+    background-color: #ccc;
+  }
+
+  .indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .line {
+    height: 75%;
+    position: absolute;
+    top: 0;
+  }
+  .bg_atlas_pending.indicator {
+    background-color: var(--pending);
+  }
+  .bg_atlas_danger.indicator {
+      background-color: var(--danger);
+    }
+
+/*Comment textfield */
+.text-field {
+    position: relative;
+    display: inline-block;
+    width: 100hh;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+
+ /* menu */
+ ul.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+/* Menu */
+
+ul.nav-menu li {
+  display: inline-block;
+}
+
+ul.nav-menu li a {
+  text-decoration: none;
+  color: var(--background);
+  padding: 10px;
+}
+
+ul.nav-menu li a:hover {
+  color: var(--secondary);
+}
+
+ul.nav-menu li.active a {
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+a{
+  text-decoration: none;
+
+}
+
+
+/* Rounded */
+.rc-10 {
+  border-radius: 10px;
+}
+
+.rc-15 {
+  border-radius: 15px;
+}
+
+.rc-20 {
+  border-radius: 20px;
+}
+.rc-50 {
+  border-radius: 50px;
+}
+
+.shadowed-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+
+/*text size*/
+.text-small{
+    font-size: 12px;
+}
+
+/*hover*/
+
+.button_hover:hover{
+       background-color: var(--info);
+       color: var(--background);
+       color: yellow !important;
+}
+
+/*jo hover*/
+    .hover-yellow:hover span {
+        color: yellow !important;
+    }
+
+
+.atlas_hover {
+   cursor: pointer;
+}
+
+.atlas_hover:hover{
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+/*pointer*/
+.pointer{
+       cursor: pointer;
+}
+.search-container{
+      display: none;
+      position: fixed;
+}
+
+.search-rectangle {
+  border: none;
+  border-bottom: 3px solid #ffffff;
+  background-color: transparent;
+  color: var(--background);
+  padding: 5px;
+  outline: none;
+
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-rectangle-container {
+    position: relative;
+  }
+
+}
+
+.search-rectangle::placeholder {
+  color: #ffffff;
+}
+
+.text-container {
+  height: 100px; /* Adjust this value according to your needs */
+  overflow: hidden;
+}
+
+.text-content {
+  height: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Adjust this value to determine the number of visible lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+ .dropzone {
+      width: 300px;
+      height: 200px;
+      border: 2px dashed #ccc;
+      text-align: center;
+      padding: 20px;
+      font-size: 20px;
+    }
+
+ .dropzone.drover {
+      border-color:#007bff;
+        }
+
+.custom-file-input {
+    background-color: yellow;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+ /* custom placeholder */
+ .custom-placeholder::placeholder{
+    color: var(--text_highlight)
+ }
+
+ .text-field {
+     display: flex;
+     align-items: center;
+     width: 100hh; /* Adjust the width as desired */
+     height: 40px; /* Adjust the height as desired */
+     border: 1px solid #000;
+     border-radius: 5px;
+     padding: 5px;
+   }
+
+   .text-field input {
+     flex: 1;
+     border: none;
+     outline: none;
+   }
+
+   .text-field .button {
+     display: inline-block;
+     padding: 8px 16px;
+     color: #fff;
+     border: none;
+     border-radius: 5px;
+     margin-left: 10px;
+     cursor: pointer;
+   }
+
+    .bg_atlas_success {
+     background-color: var(--success);
+}
+
+   /*scrollable comments*/
+   .scrollable-row {
+     max-height: 220px; /* Adjust the maximum height as desired */
+     overflow-y: auto;
+   }
+
+   /* buttons background color changing in faculty view */
+   .btn.faculty-view {
+     transition: background-color 0.3s ease; /* Add a smooth transition effect */
+   }
+
+   .btn.faculty-view:hover,
+   .btn.faculty-view:focus {
+     background-color: var(--info); /* Change the background color on hover and focus */
+   }
+
+   .btn.faculty-view:hover span,
+   .btn.faculty-view:focus span {
+     color: var(--background); /* Set the text color to white on hover and focus */
+   }
+
+   /*faculty profile*/
+   .faculty-profile-view {
+     transition: background-color 0.3s ease; /* Add a smooth transition effect */
+   }
+
+   .faculty-profile-view:hover,
+   .faculty-profile-view:focus {
+     background-color: var(--info); /* Change the background color on hover and focus */
+   }
+
+   .faculty-profile-view:hover span,
+   .faculty-profile-view:focus span {
+     color: var(--background); /* Set the text color to white on hover and focus */
+   }
