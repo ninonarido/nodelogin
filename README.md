@@ -1,5 +1,5 @@
-##Using MySQL, Express, and Node.js (MEAN) sample app
-##Updated on August, 2019 by Nino Narido
+#  Using MySQL, Express, and Node.js (MEAN) sample app
+## Updated on August, 2019 by Nino Narido
 
 For this tutorial we'll be doing something a little different, instead of developing applications with PHP we'll be creating a login system with Node.js, Express, and MySQL.
 
@@ -261,7 +261,7 @@ app.get('/home', function(request, response) {
 app.listen(3000);
 
 
-**Conclusion
+### **Conclusion
 That's about all we need to do for a basic login system, remember this is only a basic solution, I wouldn't recommend using it for production purposes, I recommend you look into more Node.js modules, for example, the password field in this tutorial are not hashed, it requires a separate package. I hope you've enjoyed this tutorial, don't forget to like, follow, and share this article.
 Enjoy learning!
 
