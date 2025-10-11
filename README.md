@@ -42,54 +42,54 @@ E. We should now have a new directory called: node_modules with all the modules 
 Creating the Login System
 1. Create a new file called: login.html, copy and paste and save as login.html
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Login Form Tutorial</title>
-		<style>
-		.login-form {
-			width: 300px;
-			margin: 0 auto;
-			font-family: Tahoma, Geneva, sans-serif;
-		}
-		.login-form h1 {
-			text-align: center;
-			color: #4d4d4d;
-			font-size: 24px;
-			padding: 20px 0 20px 0;
-		}
-		.login-form input[type="password"],
-		.login-form input[type="text"] {
-			width: 100%;
-			padding: 15px;
-			border: 1px solid #dddddd;
-			margin-bottom: 15px;
-			box-sizing:border-box;
-		}
-		.login-form input[type="submit"] {
-			width: 100%;
-			padding: 15px;
-			background-color: #535b63;
-			border: 0;
-			box-sizing: border-box;
-			cursor: pointer;
-			font-weight: bold;
-			color: #ffffff;
-		}
-		</style>
-	</head>
-	<body>
-		<div class="login-form">
-			<h1>Login Form</h1>
-			<form action="auth" method="POST">
-				<input type="text" name="username" placeholder="Username" required>
-				<input type="password" name="password" placeholder="Password" required>
-				<input type="submit">
-			</form>
-		</div>
-	</body>
-</html>
+\--<!DOCTYPE html>
+|-- <html>
+|--	<head>
+	|--	<meta charset="utf-8">
+	|--	<title>Login Form Tutorial</title>
+	|--	<style>
+	|--	.login-form {
+	|--		width: 300px;
+	|--		margin: 0 auto;
+	|--		font-family: Tahoma, Geneva, sans-serif;
+	|--	}
+	|--	.login-form h1 {
+	|--		text-align: center;
+	|--		color: #4d4d4d;
+	|--		font-size: 24px;
+	|--		padding: 20px 0 20px 0;
+	|--	}
+	|--	.login-form input[type="password"],
+	|--	.login-form input[type="text"] {
+	|--		width: 100%;
+	|--		padding: 15px;
+	|--		border: 1px solid #dddddd;
+	|--		margin-bottom: 15px;
+	|--		box-sizing:border-box;
+	|--	}
+	|--	.login-form input[type="submit"] {
+	|--		width: 100%;
+	|--		padding: 15px;
+	|--		background-color: #535b63;
+	|--		border: 0;
+	|--		box-sizing: border-box;
+	|--		cursor: pointer;
+	|--		font-weight: bold;
+	|--		color: #ffffff;
+	|--	}
+	|--	</style>
+|--	</head>
+|--	<body>
+	|--	<div class="login-form">
+		|--	<h1>Login Form</h1>
+		|--	<form action="auth" method="POST">
+			|--	<input type="text" name="username" placeholder="Username" required>
+			|--	<input type="password" name="password" placeholder="Password" required>
+			|--	<input type="submit">
+		|--	</form>
+	|--	</div>
+|--	</body>
+|-- </html>
 
 
 2. The login form will look like this in your browser, type in -->  http://localhost:3000/
@@ -119,6 +119,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
 INSERT INTO `accounts` (`id`, `username`, `password`, `email`) VALUES (1, 'qa', 'qa', 'qa@qa.com');
 
 ALTER TABLE `accounts` ADD PRIMARY KEY (`id`);
+
 ALTER TABLE `accounts` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 
 **Note:  This will create a database with the name: nodelogin and with the table: accounts, it will also insert a test account with both the username and password being: qa.
@@ -131,6 +132,7 @@ var connection = mysql.createConnection({
 	password : '',
 	database : 'nodelogin'
 });
+
 
 **Note:  Remember to change the connection details to your own.
 
@@ -146,6 +148,7 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
+
 **Note: Make sure to change the secret code for the sessions, the sessions package is what we'll use to determine if the user is logged-in, the bodyParser package will extract the form data from our login.html file.
 
 7. We now need to display our login.html file to the client:
@@ -153,6 +156,7 @@ app.use(bodyParser.json());
 app.get('/', function(request, response) {
 	response.sendFile(path.join(__dirname + '/login.html'));
 });
+
 
 **Note: When the client connects to the server the login page will be displayed, the server will send the login.htmlfile.
 
@@ -178,7 +182,8 @@ app.post('/auth', function(request, response) {
 	}
 });
 
-**Note: What happens here is we first create the POST request in our script, our login form action is to: auth so we need to use that here, after, we create two variables, one for the username and one for the password, we then check to see if the username and password exist, if they are we query our MySQL table: accounts and check to see if the details exist in the table.
+
+** Note: What happens here is we first create the POST request in our script, our login form action is to: auth so we need to use that here, after, we create two variables, one for the username and one for the password, we then check to see if the username and password exist, if they are we query our MySQL table: accounts and check to see if the details exist in the table.
 
 9. If the result returned from the table exists we create two session variables, one to determine if the client is logged in and the other will be their username.
 If no results are returned we send to the client an error message, this message will let the client know they've entered the wrong details.
@@ -194,14 +199,16 @@ app.get('/home', function(request, response) {
 	response.end();
 });
 
+
 10. Our web application needs to listen on a port, for testing purposes we'll use port 3000:
 
 app.listen(3000);
 
-11. And to run our new web application we can run the following command: node login.js in command prompt/console, this will start the server, if we enter the address: http://localhost:3000/ it should display our login form.
+11. To run our new web application we can run the following command: node login.js in command prompt/console, this will start the server.
+12. If we enter the address: http://localhost:3000/ it should display our login form.
 
 
-**Note: To summarize everything, here's the complete code snippet for your login.js sourcefile, see below:
+** Note: To summarize everything, here's the complete code snippet for your login.js sourcefile, see below:
 
 var mysql = require('mysql');
 var express = require('express');
@@ -266,6 +273,5 @@ That's about all we need to do for a basic login system, remember this is only a
 Enjoy learning!
 
 - Prof. Nino Narido, MIS
-
 "# codeless" 
 "# nodelogin" 
